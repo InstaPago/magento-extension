@@ -1,0 +1,32 @@
+<?php
+/**
+ * Instapago_Voucher extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_Voucher
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Voucher view template
+ *
+ * @category    Instapago
+ * @package     Instapago_Voucher
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php $_voucher = $this->getCurrentVoucher();?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<div class="page-title voucher-title">
+    <h1><?php echo $_voucher->getOrdernumber(); ?></h1>
+</div>
+<div class="voucher-view">
+
+</div>

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Instapago_Voucher extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_Voucher
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <instapago_voucher translate="title" module="instapago_voucher">
+                                        <title>Instapago Voucher</title>
+                                    </instapago_voucher>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <sales>
+                        <children>
+                            <instapago_voucher translate="title" module="instapago_voucher">
+                                <title>Instapago</title>
+                                <children>
+                                    <voucher translate="title" module="instapago_voucher">
+                                        <title>Voucher</title>
+                                        <sort_order>0</sort_order>
+                                    </voucher>
+                                </children>
+                            </instapago_voucher>                        </children>
+                    </sales>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <sales>
+            <children>
+                <instapago_voucher translate="title" module="instapago_voucher">
+                    <title>Instapago</title>
+                    <sort_order>0</sort_order>
+                    <children>
+                        <voucher translate="title" module="instapago_voucher">
+                            <title>Voucher</title>
+                            <action>adminhtml/voucher_voucher</action>
+                            <sort_order>0</sort_order>
+                        </voucher>
+                    </children>
+                </instapago_voucher>            </children>
+        </sales>
+
+    </menu>
+</config>

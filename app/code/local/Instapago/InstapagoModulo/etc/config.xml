@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Instapago_InstapagoModulo extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_InstapagoModulo
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Instapago_InstapagoModulo>
+            <version>1.0.0</version>
+        </Instapago_InstapagoModulo>
+    </modules>
+    <global>
+        <resources>
+            <instapago_instapagomodulo_setup>
+                <setup>
+                    <module>Instapago_InstapagoModulo</module>
+                    <class>Instapago_InstapagoModulo_Model_Resource_Setup</class>
+                </setup>
+            </instapago_instapagomodulo_setup>
+        </resources>
+        <blocks>
+            <instapago_instapagomodulo>
+                <class>Instapago_InstapagoModulo_Block</class>
+            </instapago_instapagomodulo>
+        </blocks>
+        <helpers>
+            <instapago_instapagomodulo>
+                <class>Instapago_InstapagoModulo_Helper</class>
+            </instapago_instapagomodulo>
+        </helpers>
+        <models>
+            <instapago_instapagomodulo>
+                <class>Instapago_InstapagoModulo_Model</class>
+                <resourceModel>instapago_instapagomodulo_resource</resourceModel>
+            </instapago_instapagomodulo>
+            <instapago_instapagomodulo_resource>
+                <class>Instapago_InstapagoModulo_Model_Resource</class>
+                <entities>
+                    <instapago>
+                        <table>instapago_instapagomodulo_instapago</table>
+                    </instapago>
+                    <instapago_store>
+                        <table>instapago_instapagomodulo_instapago_store</table>
+                    </instapago_store>
+                </entities>
+            </instapago_instapagomodulo_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <instapago_instapagomodulo>
+                    <file>instapago_instapagomodulo.xml</file>
+                </instapago_instapagomodulo>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Instapago_InstapagoModulo>
+                    <files>
+                        <default>Instapago_InstapagoModulo.csv</default>
+                    </files>
+                </Instapago_InstapagoModulo>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Instapago_InstapagoModulo before="Mage_Adminhtml">Instapago_InstapagoModulo_Adminhtml</Instapago_InstapagoModulo>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

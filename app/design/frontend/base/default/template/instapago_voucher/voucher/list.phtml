@@ -1,0 +1,44 @@
+<?php 
+/**
+ * Instapago_Voucher extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_Voucher
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Voucher list template
+ *
+ * @category    Instapago
+ * @package     Instapago_Voucher
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_vouchers = $this->getVouchers(); ?>
+<div class="page-title voucher-title">
+    <h1><?php echo Mage::helper('instapago_voucher')->__('Voucher') ?></h1>
+</div>
+<?php if ($_vouchers->getSize() > 0) :?>
+    <?php echo $this->getPagerHtml(); ?>
+    <div class="voucher-list-container">
+    <?php foreach ($_vouchers as $_voucher) : ?>
+        <div class="voucher-list-item">
+            <a href="<?php echo $_voucher->getVoucherUrl()?>">
+                <?php echo $_voucher->getOrdernumber();?>
+            </a><br />
+        </div>
+    <?php endforeach;?>
+    </div>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else : ?>
+    <?php echo Mage::helper('instapago_voucher')->__('There are no voucher at this moment');?>
+<?php endif;?>

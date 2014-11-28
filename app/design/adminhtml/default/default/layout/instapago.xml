@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <instapago_adminhtml_instapagobackend_index>
+	<reference name="content">
+	  <block type="instapago/adminhtml_instapagobackend" name="instapagobackend" template="instapago/instapagobackend.phtml"/>
+	</reference>
+  </instapago_adminhtml_instapagobackend_index>
+</layout>
