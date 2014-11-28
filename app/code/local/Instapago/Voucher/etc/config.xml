@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Instapago_Voucher extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_Voucher
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Instapago_Voucher>
+            <version>1.0.0</version>
+        </Instapago_Voucher>
+    </modules>
+    <global>
+        <resources>
+            <instapago_voucher_setup>
+                <setup>
+                    <module>Instapago_Voucher</module>
+                    <class>Instapago_Voucher_Model_Resource_Setup</class>
+                </setup>
+            </instapago_voucher_setup>
+        </resources>
+        <blocks>
+            <instapago_voucher>
+                <class>Instapago_Voucher_Block</class>
+            </instapago_voucher>
+        </blocks>
+        <helpers>
+            <instapago_voucher>
+                <class>Instapago_Voucher_Helper</class>
+            </instapago_voucher>
+        </helpers>
+        <models>
+            <instapago_voucher>
+                <class>Instapago_Voucher_Model</class>
+                <resourceModel>instapago_voucher_resource</resourceModel>
+            </instapago_voucher>
+            <instapago_voucher_resource>
+                <class>Instapago_Voucher_Model_Resource</class>
+                <entities>
+                    <voucher>
+                        <table>instapago_voucher_voucher</table>
+                    </voucher>
+                    <voucher_store>
+                        <table>instapago_voucher_voucher_store</table>
+                    </voucher_store>
+                </entities>
+            </instapago_voucher_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <instapago_voucher>
+                    <file>instapago_voucher.xml</file>
+                </instapago_voucher>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Instapago_Voucher>
+                    <files>
+                        <default>Instapago_Voucher.csv</default>
+                    </files>
+                </Instapago_Voucher>
+            </modules>
+        </translate>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Instapago_Voucher before="Mage_Adminhtml">Instapago_Voucher_Adminhtml</Instapago_Voucher>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <instapago_voucher>
+                <use>standard</use>
+                <args>
+                    <module>Instapago_Voucher</module>
+                    <frontName>voucher_instapago</frontName>
+                </args>
+            </instapago_voucher>
+        </routers>
+        <layout>
+            <updates>
+                <instapago_voucher>
+                    <file>instapago_voucher.xml</file>
+                </instapago_voucher>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Instapago_Voucher>
+                    <files>
+                        <default>Instapago_Voucher.csv</default>
+                    </files>
+                </Instapago_Voucher>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <instapago_voucher>
+            <voucher>
+                <breadcrumbs>1</breadcrumbs>
+            </voucher>
+        </instapago_voucher>
+    </default>
+</config>

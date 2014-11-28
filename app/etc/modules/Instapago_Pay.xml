@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Instapago_Pay>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Instapago_Pay>
+    </modules>
+</config> 

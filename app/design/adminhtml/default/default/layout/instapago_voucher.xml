@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Instapago_Voucher extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Instapago
+ * @package        Instapago_Voucher
+ * @copyright      Copyright (c) 2014
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_voucher_voucher_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>sales/instapago_voucher/voucher</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="instapago_voucher/adminhtml_voucher" name="voucher" />
+
+        </reference>
+    </adminhtml_voucher_voucher_index>
+    <adminhtml_voucher_voucher_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="instapago_voucher/adminhtml_voucher_grid" name="voucher_grid"/>
+        </block>
+    </adminhtml_voucher_voucher_grid>
+    <!-- Voucher add/edit action -->
+    <adminhtml_voucher_voucher_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>sales/instapago_voucher/voucher</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="instapago_voucher/adminhtml_voucher_edit" name="voucher_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="instapago_voucher/adminhtml_voucher_edit_tabs" name="voucher_tabs"></block>
+        </reference>
+    </adminhtml_voucher_voucher_edit>
+
+</layout>
